@@ -13,7 +13,8 @@ export class MoviesService {
     }
 
     getOne(id: number): Movie {
-        const movie = this.movies.find(movie => movie.id === id);
+        console.log('id :', id)
+        const movie = this.movies.find(movie => movie.id === +id);
         if(!movie) {
             throw new NotFoundException(`Movie with ID ${id} not found.`); //NEST에서 제공하는 ERROR
         }
